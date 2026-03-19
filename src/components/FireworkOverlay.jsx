@@ -13,7 +13,7 @@ const DEFAULT_COLORS = [
 ]
 
 export const FIREWORK_OVERLAY_DEFAULTS = {
-  className: 'absolute inset-0 h-full w-full pointer-events-none',
+  className: undefined,
   style: undefined,
   zIndex: 99999,
   colors: DEFAULT_COLORS,
@@ -513,6 +513,11 @@ export default function FireworkOverlay(props) {
   ])
 
   const mergedStyle = {
+    position: 'absolute',
+    inset: 0,
+    width: '100%',
+    height: '100%',
+    pointerEvents: 'none',
     zIndex: props.zIndex ?? FIREWORK_OVERLAY_DEFAULTS.zIndex,
     ...props.style,
   }
